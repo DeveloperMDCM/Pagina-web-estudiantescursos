@@ -1,0 +1,97 @@
+
+
+INSERT INTO `administrador` (`Email`, `contraseña`, `R_admin`) VALUES
+('admin@admin.com', 'moises', 'administrador'),
+('faber@gmoi.com', 'crack', 'administrador'),
+('faber@faber.com', 'FFDFSD', 'administrador'),
+('moi@m.com', '123456', 'administrador'),
+('netaa@netaa.com', 'neta', 'administrador'),
+('vbcvb@g.com', 'rwrwr', 'administrador');
+
+
+
+INSERT INTO `contratacion` (`Id_contratacion`, `Tiempo`, `salario`) VALUES
+(1, 'Tiempo completo', 3200000),
+(2, 'Tiempo catedra', 2700000),
+(3, 'Tiempo medio', 1800000);
+
+-- --------------------------------------------------------
+
+
+INSERT INTO `curso` (`Id_curso`, `Nombre`, `Num_Credito`, `Int_Horaria`, `Id_programa`) VALUES
+(1, 'Sistemas Distribuidos', '3', '65', 1);
+
+
+
+INSERT INTO `docente` (`Id_Docentes`, `Cedula`, `Nombres`, `Apellidos`, `Telefono`, `Direccion`, `Email`, `F_nacimiento`, `Ciudad`, `Id_Programa`, `Id_Sede`, `id_contratacion`, `rol_docente`) VALUES
+(1, 11033435, 'Jairo Enrique', 'Martinez Banda', '300433232', 'Calle 18 #11c-42 Libertadores', 'jairo.b@cecar.edu.co', '4-02-1988', 'Sincelejo', 1, 1, 1, 'docente'),
+(2, 753332, 'Carlos Cohen', 'Manrique Segundo', '3004335433', 'Calle 24 #23-20 B La maria', 'carlos.cohen@cecar.edu.co', '23-09-1980', 'Sincelejo', 1, 1, 1, 'docente'),
+(3, 6544454, 'Andrea', 'Perez Burnano', '399433233', 'Carrea 14 - # 27-35', 'andrea.b@cecar.edu.co', '16-12-1989', 'Sincelejo', 2, 1, 2, 'docente'),
+(39, 134343, 'Santiago', 'Mendoza Marquez', '435', 'Centro calle santander', 'santiado.b@cecar.edu.co', '2022-06-16', 'Monteria', 1, 2, 2, 'docente'),
+(40, 134343, 'Yamir', 'Mercado de avila', '4545', 'CALLE 23-34 villa cati', 'yamir.d@cecar.edu.co', '2022-06-07', 'Bogota', 3, 1, 3, 'docente'),
+(41, 1334, 'Carlos', 'Martinez Contraras', '309667', 'Calle 12-4 B sevilla', 'carlos.c@cecar.edu.co', '2022-06-06', 'Corozal', 2, 2, 3, 'docente');
+
+
+
+INSERT INTO `docente_curso` (`IdCurso`, `Id_Curso`, `Grupos`, `Id_Docentes`) VALUES
+(1, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+
+
+INSERT INTO `estudiante` (`Cedula`, `Nombre`, `Apellido`, `Telefono`, `F_nacimiento`, `Ciudad`, `Email`, `Id_Programa`, `Id_Sede`, `R_estudiante`, `Direccion`) VALUES
+(1102885917, 'Moises David', 'Canaria Martinez', '3004316590', '13/12/1998', 'Sincelejo', 'moises.canaria@cecar.edu.co', 1, 2, 'estudiante', 'B las americas'),
+(1102888666, 'Faber', 'Aleman Mendoza', '3002354721', '27/08/1998', 'Barranquilla', 'faber.aleman@cecar.edu.co', 1, 1, 'estudiante', 'El porbenir'),
+(1103553355, 'Jiaro Enrique', 'Martinez Banda', '3193434353', '10/02/1196', 'Corozal', 'jairo.banda@cecer.edu.co', 2, 3, 'estudiante', 'Calle 45 #12-4 bitar'),
+(11033435, 'Andres', 'Perez aguas', '300433232', '4/06/1988', 'Sincelejo', 'Andres.banda@cecar.edu.co', 1, 2, 'estudiante', 'Calle 13 - 4 tendal'),
+(56456, 'Jose', 'Mendez Mendez', '302434323', '1998-06-09', 'Bogota', 'dsds@gmail.com', 1, 1, 'estudiante', 'Calle 23-45');
+
+-- --------------------------------------------------------
+
+
+INSERT INTO `estudiante_curso` (`id_curso`, `Id_estudiante`, `Año_matricula`, `Periodo`, `Calificación`) VALUES
+(1, 1, '2022', '2021-2', 5);
+
+
+
+INSERT INTO `facultad` (`Id_Facultad`, `Nombre`) VALUES
+(1, 'FACULTAD DE CIENCIAS BÁSICAS, INGENIERÍAS Y ARQUITECTURA'),
+(2, 'FACULTAD DE DERECHO Y CIENCIAS POLÍTICAS'),
+(3, 'FACULTAD DE HUMANIDADES Y EDUCACIÓN'),
+(4, 'FACULTAD DE CIENCIAS ECONÓMICAS Y ADMINISTRATIVAS');
+
+
+
+
+INSERT INTO `programa` (`Id_Programa`, `Nombre_p`, `Num_semestre`, `Modalidad`, `Id_Faculta`, `Precio`) VALUES
+(1, 'Ingeniería de sistemas', '10', 'Presencial', 1, '$3.070.058'),
+(2, 'Derecho', '6', 'd', 2, ' $3.938.610'),
+(3, 'Diseño Industrial', '8', 'fdsf', 1, '$4.308.480'),
+(7, 'Trabajo Social', '12', 'Presencial', 3, '$3.045.187');
+
+
+
+INSERT INTO `programa_sede` (`id_Sprograma`, `Id_Sede`, `Id_Programa`) VALUES
+(1, 1, 1);
+
+
+
+INSERT INTO `p_administrativo` (`Id_personal`, `Cedula`, `Nombre`, `Apellido`, `Telefono`, `Direccion`, `Email`, `F_nacimiento`, `Ciudad`, `Id_sede`, `R_Padministrativo`) VALUES
+(1, 1102435532, 'Jaider Andres', 'Martinez  Mendez', '3004325434', 'Calle 23 # 14 Sincelejo - Tendal', 'jaider.m@cecar.edu.co', '10/12/1990', 'Sincelejo', 1, 'administrativo'),
+(2, 34234, 'fgdg', 'gdfgf', '43453', 'gfgdg', 'fdgdg', '2022-06-29', 'gdfgd', 1, 'administrativo');
+
+
+
+
+INSERT INTO `role` (`Id_rol`, `Rol`) VALUES
+(1'administrador'),
+(2, 'administrativo'),
+(3, 'docente'),
+(4, 'estudiante');
+
+
+INSERT INTO `sede` (`Nombre`, `Ciudad`, `Direccion`, `Telefono`, `Email`, `ID_Facultad`) VALUES
+('Corporación Universitaria del Caribe', 'Sincelejo', 'Carretera Troncal Km 1 Vía a Corozal . Sincelejo', '2804018', 'contacto@cecar.edu.co', '1'),
+('Cecar Extensión Montería', 'Monteria', 'Calle 31 N° 5 - 07 Centro, Montería, Córdoba', '2894644', 'monteria@cecar.edu.co', '1'),
+('Cecar Villa Vicencio', 'Villavicencio', 'Cra. 35 #34A31 N, Villavicencio, Meta', '2254534', 'villavicencio@cecar.com', '1');
